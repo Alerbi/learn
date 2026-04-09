@@ -13,7 +13,18 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     const body = req.body;
     console.log(body);
-    res.send('Got POST request');
+    res.send(`Got POST request: ${body.name}`);
+});
+
+app.put('/', (req, res) => {
+    const body = req.body;
+    console.log(body);
+    res.send('');
+});
+
+app.delete('/users/:id', (req, res) => {
+    const userId = req.params.id;
+    res.send(`Deleting user with id ${userId}`);
 });
 
 app.get('/users/:id', (req, res) => {
